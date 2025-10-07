@@ -1,0 +1,200 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #588157;
+  color: #fff;
+  font-family: "Lato", sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.navbar {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 40px;
+  font-size: 18px;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.left-side {
+  display: flex;
+  align-items: center;
+}
+
+.left-side img {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.5s ease;
+}
+.left-side img:hover {
+  transform: scale(1.2);
+}
+
+.szro {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  margin-left: 10px;
+  font-weight: 600;
+}
+
+.right-side a {
+  color: white;
+  text-decoration: none;
+  margin-left: 30px;
+  position: relative;
+  font-family: "OCR A Std", monospace;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.right-side a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: width 0.3s ease;
+}
+.right-side a:hover::after {
+  width: 100%;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 80px;
+  background: transparent;
+}
+
+.hero-text {
+  flex: 1;
+  max-width: 50%;
+  animation: fadeInLeft 1s ease forwards;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-family: "Story Script", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 1px;
+}
+
+.hero-text hr {
+  border: none;
+  border-top: 2px solid white;
+  margin: 20px 0;
+}
+  
+.hero-text p {
+  margin-top: 20px;
+  font-family: "Story Script", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 1px;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  animation: fadeInRight 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.hero-text,
+.hero-image {
+  opacity: 0; /* hidden by default */
+}
+
+
+@media (max-width: 768px) {
+ .hero {
+    flex-direction: column;
+    text-align: center;
+ }
+
+ .hero-text {
+    max-width: 100%;
+    margin-bottom: 20px;
+ }
+
+ .hero-image {
+    justify-content: center;
+ }
+
+ .hero-image img {
+    max-width: 80%;
+ }
+    }
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.info {
+  padding: 100px 80px;
+  background: rgba(0,0,0,0.2);
+  min-height: 50vh;
+  text-align: center;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.info h2 {
+  font-family: "Story Script", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 1px;
+}
+
+.info p {
+  font-family: "Story Script", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 1px;
+}

@@ -1,14 +1,216 @@
-<html>
+<!DOCTYPE html>
+<html lang="sv">
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hållbara Puffar</title>
-  <link rel="stylesheet" href="CSS.css">
-  <link rel="icon" type="https://i.ibb.co/HLhVFpDT/L-gg-till-en-underrubrik-removebg-preview.png" href="https://i.ibb.co/HLhVFpDT/L-gg-till-en-underrubrik-removebg-preview.png">
+    <link rel="icon" type="image/png" href="https://i.ibb.co/HLhVFpDT/L-gg-till-en-underrubrik-removebg-preview.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Exile&family=SUSE+Mono:ital,wght@0,100..800;1,100..800&family=Story+Script&family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-    <title>Hållbara Puffar</title>
-    <link rel="stylesheet" href="CSS.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exile&family=SUSE+Mono:ital,wght@0,100..800;1,100..800&family=Story+Script&family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #588157;
+        color: #fff;
+        font-family: "Lato", sans-serif;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      .navbar {
+        background: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(6px);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 40px;
+        font-size: 18px;
+        font-weight: bold;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .left-side {
+        display: flex;
+        align-items: center;
+      }
+
+      .left-side img {
+        width: 32px;
+        height: 32px;
+        transition: transform 0.5s ease;
+      }
+      .left-side img:hover {
+        transform: scale(1.2);
+      }
+
+      .szro {
+        font-family: "Poppins", sans-serif;
+        font-size: 20px;
+        margin-left: 10px;
+        font-weight: 600;
+      }
+
+      .right-side a {
+        color: white;
+        text-decoration: none;
+        margin-left: 30px;
+        position: relative;
+        font-family: "OCR A Std", monospace;
+        font-size: 16px;
+        letter-spacing: 1px;
+      }
+
+      .right-side a::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: white;
+        transition: width 0.3s ease;
+      }
+      .right-side a:hover::after {
+        width: 100%;
+      }
+
+      .hero {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 40px 80px;
+        background: transparent;
+      }
+
+      .hero-text {
+        flex: 1;
+        max-width: 50%;
+        animation: fadeInLeft 1s ease forwards;
+      }
+
+      .hero-text h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        font-family: "Story Script", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        letter-spacing: 1px;
+      }
+
+      .hero-text hr {
+        border: none;
+        border-top: 2px solid white;
+        margin: 20px 0;
+      }
+
+      .hero-text p {
+        margin-top: 20px;
+        font-family: "Story Script", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        letter-spacing: 1px;
+      }
+
+      .hero-image {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        animation: fadeInRight 1s ease forwards;
+        animation-delay: 0.3s;
+      }
+
+      .hero-image img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .hero-text,
+      .hero-image {
+        opacity: 0; /* hidden by default */
+      }
+
+      @media (max-width: 768px) {
+        .hero {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .hero-text {
+          max-width: 100%;
+          margin-bottom: 20px;
+        }
+
+        .hero-image {
+          justify-content: center;
+        }
+
+        .hero-image img {
+          max-width: 80%;
+        }
+      }
+
+      @keyframes fadeInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes fadeInRight {
+        from {
+          opacity: 0;
+          transform: translateX(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .info {
+        padding: 100px 80px;
+        background: rgba(0, 0, 0, 0.2);
+        min-height: 50vh;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .info h2 {
+        font-family: "Story Script", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        letter-spacing: 1px;
+      }
+
+      .info p {
+        font-family: "Story Script", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        letter-spacing: 1px;
+      }
+    </style>
   </head>
+
   <body>
     <nav class="navbar">
       <div class="left-side">
@@ -17,7 +219,6 @@
       </div>
       <div class="right-side">
         <a href="#info-section" class="cool">Info</a>
-        
       </div>
     </nav>
 
@@ -39,12 +240,13 @@
         <img src="https://i.ibb.co/JwxtqJKD/wmremove-transformed.png" alt="Puffar bild">
       </div>
     </header>
+
     <section id="info-section" class="info">
       <h2>Mer Information</h2>
       <p>
         Hållbara Puffar står för mer än bara ett gott snacks – vi vill bidra till en mer ansvarsfull livsstil. Våra potatispuffar tillverkas av potatis från hållbara odlingar och framställs med metoder som minskar matsvinn och energiförbrukning. Vi strävar efter att hela processen, från råvara till färdig produkt, ska ha så liten påverkan på klimatet som möjligt.
-
-Förpackningarna är designade med miljön i åtanke och vi arbetar ständigt för att hitta ännu mer klimatvänliga lösningar. När du väljer våra puffar får du inte bara en smakupplevelse som är lätt och krispig – du är också med och stöttar en utveckling där snacks kan vara både njutbara och hållbara.
+        <br><br>
+        Förpackningarna är designade med miljön i åtanke och vi arbetar ständigt för att hitta ännu mer klimatvänliga lösningar. När du väljer våra puffar får du inte bara en smakupplevelse som är lätt och krispig – du är också med och stöttar en utveckling där snacks kan vara både njutbara och hållbara.
       </p>
     </section>
   </body>
